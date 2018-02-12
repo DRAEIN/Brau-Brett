@@ -47,7 +47,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.12.2)
+    coffee-script-source (1.8.0)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     erubis (2.7.0)
@@ -154,6 +154,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
+  coffee-script-source (= 1.8.0)
   jbuilder (~> 2.5)
   jquery-rails
   puma (~> 3.0)
@@ -166,4 +167,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

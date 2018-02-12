@@ -1,0 +1,7 @@
+<h1>Show me all Jobs</h1>
+
+<% @jobs.each do |j| %>
+  <h2><%= j.Titel %></h2>
+  <h3><%= j.Beschreibung %></h3>
+  <h3><%= j.Ort %></h3>
+<% end %>
