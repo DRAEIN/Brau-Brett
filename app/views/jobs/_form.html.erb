@@ -1,0 +1,12 @@
+<%= form_for(@job) do |j| %>
+  <%= j.label :Titel %>
+  <%= j.text_field :Titel %>
+
+  <%= j.label :Beschreibung %>
+  <%= j.text_area :Beschreibung %>
+
+  <%= j.label :Ort %>
+  <%= j.text_field :Ort %>
+
+  <%= j.submit "Job einstellen" %>
+<% end %> 

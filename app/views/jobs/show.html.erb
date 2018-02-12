@@ -6,3 +6,8 @@
   <%= @job.Beschreibung %>
 <h3>Ort</h3>
   <%= @job.Ort %>
+
+<p><%= link_to 'Bearbeiten', edit_job_path %>
+   <%= link_to 'Startseite', root_path %>
+   <%= link_to 'Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
+</p>   
