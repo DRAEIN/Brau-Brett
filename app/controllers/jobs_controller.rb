@@ -43,7 +43,7 @@ class JobsController < ApplicationController
         format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
         format.json { head :no_content }
       end
-    end
+  end
 
 	private
 
@@ -51,8 +51,8 @@ class JobsController < ApplicationController
 		params.require(:job).permit(:Titel, :Beschreibung, :Ort)
 	end
     
-    def set_job
-    	@job = Job.find(params[:id])
-    end
+  def set_job
+  	@job = Job.find(params[:id])
+  end
 
 end

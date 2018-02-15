@@ -1,0 +1,12 @@
+<%= form_for(@profile) do |p| %>
+  <%= p.label :Titel %>
+  <%= p.text_field :Titel %>
+  
+  <%= p.label :Name %>
+  <%= p.text_field :Name %>
+
+  <%= p.label :Beschreibung %>
+  <%= p.text_area :Beschreibung %>
+
+  <%= p.submit "Profil erstellen" %>
+<% end %> 

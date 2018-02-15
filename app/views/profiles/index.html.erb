@@ -1,0 +1,10 @@
+<h1>Alle Profile</h1>
+
+<% @profiles.each do |p| %>
+  <h2><%= p.Titel %></h2>
+  <h3><%= p.Beschreibung %></h3>
+  <h3><%= p.Name %></h3>
+<% end %>
+
+<p><%= link_to 'Neues Profil erstellen', new_profile_path %></p>
+<p><%= link_to 'Home', root_path %></p>
