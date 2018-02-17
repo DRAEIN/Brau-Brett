@@ -1,4 +1,4 @@
 class Profile < ApplicationRecord
-	has_many :jobs
+	belongs_to :user
 	validates_presence_of :Titel, :Beschreibung, :Name
 end

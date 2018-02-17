@@ -6,11 +6,11 @@ class ProfilesController < ApplicationController
     end
 
 	def new
-		@profile = Profile.new
+		@profile = current_user.build_profile
 	end
 
 	def create
-		@profile = Profile.new(profile_params)
+		@profile = current_user.build_profile(profile_params)
 		if @profile.save
 			redirect_to @profile
 		else
