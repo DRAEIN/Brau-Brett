@@ -12,15 +12,19 @@ class JobsController < ApplicationController
 
 	def create
       @job = current_user.jobs.build(job_params)
+      respond_to do |format|
       if @job.save
-      	redirect_to @job
+        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.json { render :show, status: :created, location: @job }
       else
-        flash[:notice] = "Job konnte nicht erstellt werden, bitte fülle alle Felder aus!"
-      	render 'new'
+        format.html { render :new }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+        flash[:alert] = "Job konnte nicht erstellt werden, bitte alle Felder ausfüllen!"
       end
     end
+  end
 
-	def show
+  def show
 	end
 
 	def edit
