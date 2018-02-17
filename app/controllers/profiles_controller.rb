@@ -14,6 +14,7 @@ class ProfilesController < ApplicationController
 		if @profile.save
 			redirect_to @profile
 		else
+			flash[:notice] = "Das Profil konnte nicht erstellt werden, bitte fülle alle Felder aus!"
 			render 'new'
 		end
 	end

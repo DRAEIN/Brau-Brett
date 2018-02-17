@@ -1,10 +1,10 @@
 <h1>Show me all Jobs</h1>
 
 <% @jobs.each do |j| %>
-  <h2><%= j.Titel %></h2>
+  <h2><%= link_to j.Titel, job_path(j) %></h2>
   <h3><%= j.Beschreibung %></h3>
   <h3><%= j.Ort %></h3>
-  <p>Published <%= distance_of_time_in_words(j.created_at, Time.now) %> ago</p>
+  <p>Published <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
 <% end %>
 
 <p><%= link_to 'Neues Jobangebot erstellen', new_job_path %></p>

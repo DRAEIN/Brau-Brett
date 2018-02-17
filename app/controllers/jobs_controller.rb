@@ -15,6 +15,7 @@ class JobsController < ApplicationController
       if @job.save
       	redirect_to @job
       else
+        flash[:notice] = "Job konnte nicht erstellt werden, bitte fülle alle Felder aus!"
       	render 'new'
       end
     end
