@@ -1,20 +1,18 @@
- <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview">
-          	<% @jobs.each do |j| %>
-              <h2 class="post-title"><%= link_to j.Titel, job_path(j) %></h2>
-                 <h4 class="post-subtitle">
-                   <%= j.Ort %>
-                 </h4>
-                   <p class="post-meta">Posted by <%= j.user.email %>, <%= distance_of_time_in_words(j.created_at, Time.now) %> ago
-                   </p>
-            <% end %>
-          </div>
-          <hr>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% @jobs.each do |j| %>
+        <div class="border-index">
+          <h2 class="post-title"><%= link_to j.Titel, job_path(j) %></h2>
+          <h4 class="post-subtitle"><%= j.Ort %></h4>
+          <p class="post-meta">Posted by <%= j.user.email %>, <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
         </div>
-     </div>
- </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+   
+  
 
 
 
