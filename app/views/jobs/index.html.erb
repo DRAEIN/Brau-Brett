@@ -1,10 +1,25 @@
-<h1>Show me all Jobs</h1>
+ <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+          	<% @jobs.each do |j| %>
+              <h2 class="post-title"><%= link_to j.Titel, job_path(j) %></h2>
+                 <h4 class="post-subtitle">
+                   <%= j.Ort %>
+                 </h4>
+                   <p class="post-meta">Posted by <%= j.user.email %>, <%= distance_of_time_in_words(j.created_at, Time.now) %> ago
+                   </p>
+            <% end %>
+          </div>
+          <hr>
+        </div>
+     </div>
+ </div>
 
-<% @jobs.each do |j| %>
-  <h2><%= link_to j.Titel, job_path(j) %></h2>
-  <h3><%= j.Beschreibung %></h3>
-  <h3><%= j.Ort %></h3>
-  <p>Published <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
-<% end %>
+
+
+
+
+
 
 
