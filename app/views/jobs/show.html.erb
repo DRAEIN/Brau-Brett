@@ -5,6 +5,15 @@
 	  <%= @job.Beschreibung %>
 	<h3>Ort</h3>
 	  <%= @job.Ort %>
+	
+	  <% if @job.avatar? %>
+        <%= image_tag @job.avatar.url(:medium) %>
+	  <% else %>
+	    No attachment available!
+	  <% end %>
+	
+	   
+    
 
 	<p><%= link_to 'Bearbeiten', edit_job_path %>
 	   <%= link_to 'Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } %>

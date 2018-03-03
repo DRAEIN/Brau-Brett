@@ -1,4 +1,4 @@
-<%= form_for(@job) do |j| %>
+<%= form_for @job, html: { multipart: true } do |j| %>
   <%= j.label :Titel %><br />
   <%= j.text_field :Titel %>
 
@@ -7,6 +7,8 @@
 
   <%= j.label :Ort %><br />
   <%= j.text_field :Ort %>
+
+  <%= j.file_field :avatar %>
   <hr>
   <%= j.submit "Job einstellen" %>
 <% end %> 
