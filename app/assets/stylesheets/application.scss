@@ -96,3 +96,15 @@ img::-moz-selection {
   left: 50px;
   top: 30px;
 }
+
+.form-group:focus {
+  border: 3px solid #555;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-group p {
+  padding-top: -20px;
+}

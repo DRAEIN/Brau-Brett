@@ -1,14 +1,24 @@
 <%= form_for @job, html: { multipart: true } do |j| %>
-  <%= j.label :Titel %><br />
-  <%= j.text_field :Titel %>
+  <div class="form-group">
+    <%= j.label :Titel %>
+    <p><%= j.text_field :Titel %></p>
+  </div>
+  
+  <div class="form-group">
+    <%= j.label :Beschreibung %>
+    <p><%= j.text_area :Beschreibung, rows: 10, cols: 50 %></p>
+  </div>
 
-  <%= j.label :Beschreibung %>
-  <%= j.text_area :Beschreibung %><br />
+  <div class="form-group">
+    <%= j.label :Ort %>
+    <p><%= j.text_field :Ort %></p>
+  </div>
 
-  <%= j.label :Ort %><br />
-  <%= j.text_field :Ort %>
-
-  <%= j.file_field :avatar %>
+  <div class="form-group">
+    <%= j.file_field :avatar %>
+  </div>
+  
   <hr>
+  
   <%= j.submit "Job einstellen" %>
-<% end %> 
+<% end %>
