@@ -1,11 +1,18 @@
 <h1>Showpage Profile</h1>
 
+<% if @profile.profileavatar? %>
+  <%= image_tag @profile.profileavatar.url(:thumb) %>
+<% else %>
+  No attachment available!
+<% end %>
+
 <h2>Titel</h2>
   <%= @profile.Titel %>
 <h3>Beschreibung</h3>
   <%= @profile.Beschreibung %>
 <h3>Name</h3>
   <%= @profile.Name %>
+
 
 <p><%= link_to 'Bearbeiten', edit_profile_path %>
    <%= link_to 'Alle Profile', profiles_path %>
