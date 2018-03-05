@@ -14,7 +14,10 @@
   <%= @profile.Name %>
 
 
-<p><%= link_to 'Bearbeiten', edit_profile_path %>
-   <%= link_to 'Alle Profile', profiles_path %>
-   <%= link_to 'Löschen', @profile, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
-</p>  
+<% if current_user.profile == @profile %>
+  <p><%= link_to 'Bearbeiten', edit_profile_path %>
+     <%= link_to 'Löschen', @profile, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
+  </p>
+<% end %>  
+  <p><%= link_to 'Alle Profile', profiles_path %></p>
+ 

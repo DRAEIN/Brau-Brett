@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
 	before_action :set_job, only: [:show, :edit, :update, :destroy]
+  access all: [:show, :index], user: :all, site_admin: :all
   
 
 

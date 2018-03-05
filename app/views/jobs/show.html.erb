@@ -6,9 +6,11 @@
 	    <%= @job.Beschreibung %>
 	  <h3>Ort</h3>
 	    <%= @job.Ort %>
-      <p><%= link_to 'Bearbeiten', edit_job_path %>
-	     <%= link_to 'Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
-	  </p>
+	  <% if current_user == @job.user %>
+        <p><%= link_to 'Bearbeiten', edit_job_path %>
+	       <%= link_to 'Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
+	    </p>
+	  <% end %>
 	</div>
 	<div class="cold-md-6">
 	  <% if @job.avatar? %>
