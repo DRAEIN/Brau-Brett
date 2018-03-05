@@ -5,8 +5,10 @@
 	<%= p.label :Name %>
 	<%= p.text_field :Name %>
 
-	<%= p.label :Beschreibung %>
-	<%= p.text_area :Beschreibung %> 
+	<div class="form-group">
+	  <%= p.label :Beschreibung %>
+	  <%= p.text_area :Beschreibung, rows: 15, cols: 60 %> 
+	</div>
 
 	<%= p.file_field :profileavatar %>
 
