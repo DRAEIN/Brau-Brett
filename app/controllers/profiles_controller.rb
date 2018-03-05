@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
 	before_action :set_profile, only: [:show, :edit, :update, :destroy]
+	access all: [:show, :index], user: :all, site_admin: :all
 	
 
     def index
@@ -44,7 +45,7 @@ class ProfilesController < ApplicationController
     end
 
 	def destroy
-	@job.destroy
+	@profile.destroy
 	  respond_to do |format|
 	  	format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }
 	  	format.json { head :no_content }
