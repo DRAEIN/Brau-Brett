@@ -11,14 +11,15 @@
   	  	<span class="icon-bar"></span>
   	  </button>
   	    <div class="collapse navbar-collapse navHeaderCollapse">
-
-  	  	  <ul class="nav navbar-nav navbar-right">
-
-  	  		<li class="active"><%= link_to 'Neuen Job einstellen', new_job_path %></li>
-  	  		<li><%= link_to 'Neues Profil anlegen', new_profile_path %></li>
-  	  		<li><%= login_helper %></li>
-
-  	  	  </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in?  %>
+                concat <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                       <li><%= link_to 'Neuen Job einstellen', new_job_path %>
+            <% else %>
+                <li><%= link_to 'Login', new_user_session_path %>
+                <li><%= link_to 'Register', new_user_registration_path %>
+            <% end %>
+          </ul>
   	    </div>
   </div>
 </div>

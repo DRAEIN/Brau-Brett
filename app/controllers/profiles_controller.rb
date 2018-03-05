@@ -1,12 +1,18 @@
 class ProfilesController < ApplicationController
 	before_action :set_profile, only: [:show, :edit, :update, :destroy]
+	
 
     def index
     	@profiles = Profile.all
     end
 
 	def new
-		@profile = current_user.build_profile
+      if current_user.profile.blank?
+        @profile = current_user.build_profile
+      else
+      	redirect_to root_path
+      	flash[:notice] = "Du besitzt bereits ein Profil"
+      end
 	end
 
 	def create
@@ -54,4 +60,6 @@ class ProfilesController < ApplicationController
 	def set_profile
 		@profile = Profile.find(params[:id])
 	end
+
+	
 end
