@@ -12,6 +12,11 @@
   	  </button>
   	    <div class="collapse navbar-collapse navHeaderCollapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Jobs durchsuchen" %>
+                  <%= submit_tag "Suchen", :name => nil %>
+                <% end %>
+            </li>
             <% if user_signed_in?  %>
                 concat <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %>
                        <li><%= link_to 'Neuen Job einstellen', new_job_path %>

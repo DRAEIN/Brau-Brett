@@ -9,4 +9,8 @@ class Job < ApplicationRecord
     def self.recent
       order("created_at DESC")
 	end
+
+	def self.search(search)
+		where("Ort LIKE ? OR Titel LIKE ? OR Beschreibung LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+	end
 end
