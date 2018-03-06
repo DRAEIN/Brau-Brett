@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       
-      
+      <%= paginate @jobs %>
         <% @jobs.each do |j| %>
           <div class="border-index">
             <h2 class="post-title"><%= link_to j.Titel, job_path(j) %></h2>
@@ -10,7 +10,7 @@
             <p class="post-meta">Posted by <%= j.user.email %>, <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
           </div>
         <% end %>
-      
+      <%= paginate @jobs %>
     </div>
   </div>
 </div>

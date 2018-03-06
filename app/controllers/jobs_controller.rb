@@ -5,13 +5,9 @@ class JobsController < ApplicationController
 
 
 	def index
-      @jobs = Job.recent.page(params[:page]).per(10)
-      if params[:search]
-        @jobs = Job.search(params[:search]).order("created_at DESC")
-      else
-        @jobs = Job.all.order("created_at DESC")
-      end
-	end
+     @jobs = Job.order("created_at DESC").recent.page(params[:page]).per(10)
+     @jobs = @jobs.search(params[:search]).order("created_at DESC") if params[:search]
+  end
 
 	def new
 	  @job = current_user.jobs.build
