@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
 
 	def index
-      @jobs = Job.recent
+      @jobs = Job.recent.page(params[:page]).per(10)
 	end
 
 	def new
