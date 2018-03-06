@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      
+      <h1>Alle Jobangebote</h1>
+      <p><%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Jobs durchsuchen" %>
+            <%= submit_tag "Suchen", :name => nil %>
+          <% end %>
+      </p>
       <%= paginate @jobs %>
         <% @jobs.each do |j| %>
           <div class="border-index">

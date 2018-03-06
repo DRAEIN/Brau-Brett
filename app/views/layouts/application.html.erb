@@ -15,7 +15,8 @@
 
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <%= js add_gritter(flash[:notice] , sticky: false) %>
+    <%= js add_gritter(flash[:alert] , sticky: false) %>
   </body>
 </html>

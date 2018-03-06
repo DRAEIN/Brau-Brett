@@ -1,30 +1,26 @@
 <div class="navbar navbar-inverse navbar-static-top">
   <div class="container">
-  	
-      <%= link_to root_path do %>
-        <%= image_tag "Braubrettlogo.png", class: "logo" %>
-      <% end %>
+  	<%= link_to root_path do %>
+      <%= image_tag "Braubrettlogo.png", class: "logo" %>
+    <% end %>
     
-  	  <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-  	  	<span class="icon-bar"></span>
-  	  	<span class="icon-bar"></span>
-  	  	<span class="icon-bar"></span>
-  	  </button>
-  	    <div class="collapse navbar-collapse navHeaderCollapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Jobs durchsuchen" %>
-                  <%= submit_tag "Suchen", :name => nil %>
-                <% end %>
-            </li>
-            <% if user_signed_in?  %>
-                concat <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-                       <li><%= link_to 'Neuen Job einstellen', new_job_path %>
-            <% else %>
-                <li><%= link_to 'Login', new_user_session_path %>
-                <li><%= link_to 'Register', new_user_registration_path %>
-            <% end %>
-          </ul>
-  	    </div>
+    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+  	  <span class="icon-bar"></span>
+  	  <span class="icon-bar"></span>
+  	  <span class="icon-bar"></span>
+  	</button>
+  	    
+    <div class="collapse navbar-collapse navHeaderCollapse">
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in?  %>
+          concat <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
+            <li><%= link_to 'Profil erstellen' , new_profile_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Login', new_user_session_path %>
+            <li><%= link_to 'Register', new_user_registration_path %>
+        <% end %>
+      </ul>
+  	</div>
   </div>
 </div>
