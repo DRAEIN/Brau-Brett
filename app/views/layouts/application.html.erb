@@ -13,7 +13,8 @@
     
 
 
-    <%= render 'shared/navbar' %>
+    <%= render partial: 'shared/navbar' %>
+    
     <%= yield %>
     
     <%= js add_gritter(flash[:notice] , sticky: false) %>

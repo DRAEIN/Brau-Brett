@@ -14,7 +14,12 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in?  %>
           concat <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
-            <li><%= link_to 'Profil erstellen' , new_profile_path %></li>
+          <% if current_user.profile.blank? %>
+            <li><%= link_to 'New Profile' , new_profile_path %></li>
+            <% else %>
+            <li><%= link_to 'My Profile', profile_path(current_user.profile) %></li>
+          <% end %>
+            
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Login', new_user_session_path %>
