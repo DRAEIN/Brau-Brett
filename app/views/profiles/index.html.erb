@@ -1,11 +1,11 @@
-<h1>Alle Profile</h1>
-<%= paginate @profiles %>
-  <% @profiles.each do |p| %>
-    <h2><%= p.Titel %></h2>
-    <h3><%= p.Beschreibung %></h3>
-    <h3><%= p.Name %></h3>
-  <% end %>
-<%= paginate @profiles %>
-
-<p><%= link_to 'Neues Profil erstellen', new_profile_path %></p>
-<p><%= link_to 'Home', root_path %></p>
+<div class="container">
+	<div class="row">
+		<h1>Alle Profile</h1>
+		   <%= paginate @profiles %>
+		      <% @profiles.each do |p| %>
+		        <h3><%= link_to p.Titel, profile_path(p) %></h3>
+		        <hr>
+		      <% end %>
+		   <%= paginate @profiles %>
+    </div>
+</div>

@@ -8,13 +8,14 @@
   	    
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in?  %>
-          concat <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
-          <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'Login', new_user_session_path %>
-          <li><%= link_to 'Register', new_user_registration_path %>
-        <% end %>
+        <li><%= link_to 'Alle Profile anzeigen', profiles_path %></li>
+          <% if user_signed_in?  %>
+            concat <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Login', new_user_session_path %>
+            <li><%= link_to 'Register', new_user_registration_path %>
+          <% end %>
       </ul>
   	</div>
   </div>
