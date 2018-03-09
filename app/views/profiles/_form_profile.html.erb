@@ -1,12 +1,16 @@
 <%= form_for(@profile) do |p| %>
-	<%= p.label :Titel %><br />
-	<%= p.text_field :Titel %>
+    <div class="form-group">
+		<%= p.label :Titel %><br />
+		<%= p.text_field :Titel %>
+	</div>
 
-	<%= p.label :Name %>
-	<%= p.text_field :Name %>
+    <div class="form-group">
+		<%= p.label :Name %><br />
+		<%= p.text_field :Name %>
+	</div>
 
 	<div class="form-group">
-	  <%= p.label :Beschreibung %>
+	  <%= p.label :Beschreibung %><br />
 	  <%= p.text_area :Beschreibung, rows: 15, cols: 60 %> 
 	</div>
 
