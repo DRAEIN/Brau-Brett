@@ -8,13 +8,8 @@ class ProfilesController < ApplicationController
     end
 
 	def new
-      if current_user.profile.blank?
-        @profile = current_user.build_profile
-      else
-      	redirect_to root_path
-      	flash[:notice] = "Du besitzt bereits ein Profil"
-      end
-	end
+      @profile = Profile.new(user: current_user)
+    end
 
 	def create
 		@profile = current_user.build_profile(profile_params)
