@@ -17,10 +17,12 @@
 		  <h3>Kontaktieren</h3>
 		    <%= @profile.user.email %>
 
-          <% if current_user.profile == @profile %>
-		    <p><%= link_to 'Bearbeiten', edit_profile_path %>
-		       <%= link_to 'Löschen', @profile, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
-		    </p>
+          <% if user_signed_in? %>
+	          <% if current_user.profile == @profile %>
+			    <p><%= link_to 'Bearbeiten', edit_profile_path %>
+			       <%= link_to 'Löschen', @profile, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
+			    </p>
+			  <% end %>
 		 <% end %>  
 		</div>
 	</div>
