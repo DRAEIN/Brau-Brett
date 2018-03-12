@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="container">
 		<div class="col-md-6">
-           <h1><%= current_user.profile.Name %></h1>
+           <h1><%= @profile.Name %></h1>
             <% if @profile.profileavatar? %>
 		      <%= image_tag @profile.profileavatar.url(:medium) %>
 		    <% else %>
@@ -15,7 +15,7 @@
 		  <h3>Beschreibung</h3>
 		    <%= @profile.Beschreibung %>
 		  <h3>Kontaktieren</h3>
-		    <%= @current_user.email %>
+		    <%= @profile.user.email %>
 
           <% if current_user.profile == @profile %>
 		    <p><%= link_to 'Bearbeiten', edit_profile_path %>
