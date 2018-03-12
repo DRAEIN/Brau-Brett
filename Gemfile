@@ -23,6 +23,7 @@ gem "paperclip", "~> 5.2.1"
 gem 'petergate', '~> 1.6', '>= 1.6.3'
 gem 'kaminari'
 gem "gritter", "1.2.0"
+gem 'omniauth-facebook'
 
 
 
