@@ -7,8 +7,10 @@
 	  <h3>Ort</h3>
 	    <%= @job.Ort %>
 	  <% if current_user == @job.user %>
-        <p><%= link_to 'Bearbeiten', edit_job_path %>
-	       <%= link_to 'Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } %>
+	  
+        <p><%= link_to ' Bearbeiten', edit_job_path, class: "fa fa-pencil-square-o" %>
+        	
+	       <%= link_to ' Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } , class: "fa fa-trash" %>
 	    </p>
 	  <% end %>
 	</div>

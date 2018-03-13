@@ -75,6 +75,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23-x64-mingw32)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gritter (1.2.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
   devise
+  font-awesome-rails (~> 4.6, >= 4.6.3.1)
   gritter (= 1.2.0)
   jbuilder (~> 2.5)
   jquery-rails
