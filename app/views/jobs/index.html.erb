@@ -12,7 +12,7 @@
           <div class="border-index">
             <h2 class="post-title"><%= link_to j.Titel, job_path(j) %></h2>
             <h4 class="post-subtitle"><%= j.Ort %></h4>
-            <p class="post-meta">Posted by <%= j.user.email %>, <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
+            <p class="post-meta">Posted <%= distance_of_time_in_words(j.created_at, Time.now) %> ago </p>
           </div>
         <% end %>
       <%= paginate @jobs %>
