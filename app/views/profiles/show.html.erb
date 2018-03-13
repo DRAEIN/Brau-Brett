@@ -13,7 +13,7 @@
 		  <h2>Titel</h2>
 		    <%= @profile.Titel %>
 		  <h3>Beschreibung</h3>
-		    <%= @profile.Beschreibung %>
+		    <%= markdown @profile.Beschreibung %>
 		  <h3>Kontaktieren</h3>
 		    <%= @profile.user.email %>
 

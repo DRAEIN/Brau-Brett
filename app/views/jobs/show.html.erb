@@ -1,18 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-	  <h1><%= @job.Titel %><h1>
-	  <h3>Beschreibung</h3>
-	    <%= @job.Beschreibung %>
-	  <h3>Ort</h3>
-	    <%= @job.Ort %>
-	  <% if current_user == @job.user %>
-	  
-        <p><%= link_to ' Bearbeiten', edit_job_path, class: "fa fa-pencil-square-o" %>
-        	
-	       <%= link_to ' Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } , class: "fa fa-trash" %>
-	    </p>
-	  <% end %>
+	   <h1><%= @job.Titel %><h1>
+          <h3>Beschreibung</h3>
+             <%= markdown @job.Beschreibung %>
+          <h3>Ort</h3>
+             <%= @job.Ort %>
+		  <% if current_user == @job.user %>
+		     <p><%= link_to ' Bearbeiten', edit_job_path, class: "fa fa-pencil-square-o" %>
+	         <%= link_to ' Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } , class: "fa fa-trash" %>
+		     </p>
+		  <% end %>
 	</div>
 	<div class="cold-md-6">
 	  <% if @job.avatar? %>

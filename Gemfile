@@ -24,6 +24,7 @@ gem 'kaminari'
 gem "gritter", "1.2.0"
 gem 'omniauth-facebook'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+gem 'redcarpet'
 
 
 
