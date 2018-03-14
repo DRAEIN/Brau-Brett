@@ -30,6 +30,8 @@ gem 'redcarpet'
 
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'figaro', '~> 1.1', '>= 1.1.1'
+  gem 'aws-sdk', '< 2.0'
 end
 
 group :development do
