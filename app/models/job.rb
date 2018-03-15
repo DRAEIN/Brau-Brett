@@ -11,6 +11,6 @@ class Job < ApplicationRecord
 	end
 
 	def self.search(search)
-		where("Ort LIKE ? OR Titel LIKE ? OR Beschreibung LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+		where("jobs.Ort LIKE ? OR jobs.Titel LIKE ? OR jobs.Beschreibung LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
 	end
 end
