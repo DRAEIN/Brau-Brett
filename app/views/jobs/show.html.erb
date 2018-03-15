@@ -5,7 +5,7 @@
           <h3>Beschreibung</h3>
              <%= markdown @job.Beschreibung %>
           <h3>Ort</h3>
-             <%= @job.Ort %>
+             <%= @job.ort %>
 		  <% if current_user == @job.user %>
 		     <p><%= link_to ' Bearbeiten', edit_job_path, class: "fa fa-pencil-square-o" %>
 	         <%= link_to ' Löschen', @blog, method: :delete, data: { confirm: "Sind Sie sicher?" } , class: "fa fa-trash" %>
