@@ -9,8 +9,8 @@
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Alle Profile anzeigen', profiles_path %></li>
+        <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
           <% if user_signed_in?  %>
-            concat <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
             <% if current_user.image? %>
               <%= image_tag(current_user.image) %>
