@@ -242,3 +242,8 @@ body,html{
   margin-bottom: 150px;
 }
 
+.job-image:hover {
+  transform:scale(2,2);
+  transform-origin:0 0;
+}
+

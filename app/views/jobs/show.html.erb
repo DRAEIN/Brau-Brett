@@ -14,7 +14,7 @@
 	</div>
 	<div class="cold-md-6">
 	  <% if @job.avatar? %>
-        <%= image_tag @job.avatar.url(:big) %>
+        <%= image_tag @job.avatar.url(:big), class: 'job-image' %>
 	  <% else %>
 	    Kein Bild vorhanden!
 	  <% end %>
