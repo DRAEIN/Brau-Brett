@@ -19,9 +19,9 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mein Profil <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
               <ul class="dropdown-menu forAnimate" role="menu">
                 <% if current_user.has_profile? %>
-                  <li><%= link_to 'Zeige mein Profil', profile_path(current_user.profile) %></li>
+                  <li><%= link_to 'Meine Jobsuche', profile_path(current_user.profile) %></li>
                 <% else %>
-                  <li><%= link_to 'Neues Profil erstellen' , new_profile_path %></li>
+                  <li><%= link_to 'Profil für Jobsuche erstellen' , new_profile_path %></li>
                 <% end %>
               </ul>
          <% end %>

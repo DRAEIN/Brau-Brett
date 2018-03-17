@@ -8,7 +8,7 @@
   	    
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Alle Profile anzeigen', profiles_path %></li>
+        <li><%= link_to 'Ich suche einen Job', profiles_path %></li>
         <li><%= link_to 'Neues Jobangebot einstellen', new_job_path %></li>
           <% if user_signed_in?  %>
             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
